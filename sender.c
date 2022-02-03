@@ -22,18 +22,18 @@ uint64_t prepare_block(uint64_t message)
 
 int main()
 {
-    srandom(time(NULL));
+    srand(time(NULL));
 
     FILE* file = fopen("messages.txt", "w");
     if (!file) {
-        printf("Unable to open messages.txt");
+        printf("Unable to open messages.txt\n");
         return 1;
     }
 
     for (int i = 0; i < MESSAGE_COUNT; i++) {
-        uint64_t message = (random() << 32) + random();
+        uint64_t message = (rand() << 31) + rand();
         message = prepare_block(message);
-        fprintf(file, "%llx\n", message);
+        fprintf(file, "%lx\n", message);
     }
 
     fclose(file);
