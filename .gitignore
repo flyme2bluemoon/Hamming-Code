@@ -1,0 +1,7 @@
+*.o
+bin/
+.DS_Store
+
+messages.txt
+corrupted.txt
+recovered.txt
