@@ -20,12 +20,12 @@ int main()
     uint64_t message;
     uint8_t parity;
     for (int i = 0; i < MESSAGE_COUNT; i++) {
-        if (fscanf(corrupted, "%lx", &message) == EOF) {
+        if (fscanf(corrupted, "%llx", &message) == EOF) {
             break;
         }
         parity = get_parity(message);
         message ^= 1ULL << (MESSAGE_SIZE - 1 - parity);
-        fprintf(recovered, "%lx\n", message);
+        fprintf(recovered, "%llx\n", message);
     }
 
     fclose(corrupted);

@@ -33,7 +33,7 @@ int main()
     for (int i = 0; i < MESSAGE_COUNT; i++) {
         uint64_t message = (rand() << 31) + rand();
         message = prepare_block(message);
-        fprintf(file, "%lx\n", message);
+        fprintf(file, "%llx\n", message);
     }
 
     fclose(file);

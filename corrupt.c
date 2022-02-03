@@ -23,12 +23,12 @@ int main()
     uint64_t message;
     unsigned int flip_index;
     for (int i = 0; i < MESSAGE_COUNT; i++) {
-        if (fscanf(original, "%lx", &message) == EOF) {
+        if (fscanf(original, "%llx", &message) == EOF) {
             break;
         }
         flip_index = rand() % (MESSAGE_SIZE - 1);
         message ^= 1ULL << flip_index;
-        fprintf(corrupted, "%lx\n", message);
+        fprintf(corrupted, "%llx\n", message);
     }
 
     fclose(original);
