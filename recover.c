@@ -17,8 +17,8 @@ int main()
         return 1;
     }
 
-    u_int64_t message;
-    u_int8_t parity;
+    uint64_t message;
+    uint8_t parity;
     for (int i = 0; i < MESSAGE_COUNT; i++) {
         fscanf(corrupted, "%llx", &message);
         parity = get_parity(message);

@@ -5,10 +5,10 @@
 
 #include "hamming.h"
 
-u_int64_t prepare_block(u_int64_t message)
+uint64_t prepare_block(uint64_t message)
 {
-    u_int8_t parity = get_parity(message);
-    u_int8_t bit;
+    uint8_t parity = get_parity(message);
+    uint8_t bit;
 
     for (int i = 0; i < log2(MESSAGE_SIZE); i++) {
         bit = (parity >> i) & 1ULL;
@@ -31,7 +31,7 @@ int main()
     }
 
     for (int i = 0; i < MESSAGE_COUNT; i++) {
-        u_int64_t message = (random() << 32) + random();
+        uint64_t message = (random() << 32) + random();
         message = prepare_block(message);
         fprintf(file, "%llx\n", message);
     }

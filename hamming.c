@@ -2,10 +2,10 @@
 
 #include "hamming.h"
 
-u_int8_t get_parity(u_int64_t message)
+uint8_t get_parity(uint64_t message)
 {
-    u_int8_t parity = 0;
-    u_int8_t bit;
+    uint8_t parity = 0;
+    uint8_t bit;
     for (int i = 0; i < MESSAGE_SIZE; i++) {
         bit = (message >> (MESSAGE_SIZE - 1 - i)) & 1ULL;
         if (bit == 1) {

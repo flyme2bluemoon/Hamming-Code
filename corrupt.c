@@ -20,7 +20,7 @@ int main()
         return 1;
     }
 
-    u_int64_t message;
+    uint64_t message;
     unsigned int flip_index;
     for (int i = 0; i < MESSAGE_COUNT; i++) {
         fscanf(original, "%llx", &message);
